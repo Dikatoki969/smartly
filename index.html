@@ -59,7 +59,7 @@
           <span>PENERIMAAN</span>
           <span>MURID BARU</span>
         </h1>
-        <p class="hero-year">TAHUN AJARAN 2026/2027</p>
+        <p class="hero-year" id="heroYear"></p>
 
         <div class="hero-buttons">
           <a href="#pendaftaran" class="btn btn--primary">DAFTAR</a>
@@ -361,4 +361,16 @@ Lihat Semua Foto →
   </footer>
 
 </body>
+  
+<script>
+  const now = new Date();
+  const year = now.getFullYear();
+
+  // Jika tahun ajaran dimulai Juli
+  const startYear = now.getMonth() >= 6 ? year : year - 1;
+  const endYear = startYear + 1;
+
+  document.getElementById("heroYear").textContent =
+    `TAHUN AJAR ${startYear}/${endYear}`;
+</script>
 </html>
